@@ -19,11 +19,35 @@ export default function App() {
     setTitle('');
   };
 
+  const editEntry = () => {
+    
+  };
+
+  const deleteEntry = () => {
+
+  };
+
   return (
     <main>
-      <ul>
-        {titles.map((title, i) => <li key={i}>{title}</li>)}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Article Title</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {titles.map((title, i) => 
+            <tr key={i}>
+              <td>{title}</td>
+              <td>
+                <button onClick={editEntry}><i className="fa-solid fa-pen-to-square"></i></button>
+                <button onClick={deleteEntry}><i className="fa-solid fa-trash-can"></i></button>
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
 
       <form onSubmit={userFeedBack}>
         <input type="text" value={title} onChange={e => setTitle(e.target.value)}/>
