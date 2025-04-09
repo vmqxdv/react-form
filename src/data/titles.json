@@ -1,7 +1,37 @@
 [
-  "Come migliorare la produttività in ufficio",
-  "Le migliori app per la gestione del tempo",
-  "Guida completa al digital marketing",
-  "Strategie di risparmio per il 2025",
-  "Tendenze tecnologiche da tenere d'occhio"
+  {
+    "title": "Come migliorare la produttività in ufficio",
+    "author": "Luca Bianchi",
+    "date": "2025-03-10",
+    "category": "Work",
+    "tags": ["productivity", "office", "tips"]
+  },
+  {
+    "title": "Le migliori app per la gestione del tempo",
+    "author": "Sara Verdi",
+    "date": "2025-02-25",
+    "category": "Technology",
+    "tags": ["apps", "time management", "organization"]
+  },
+  {
+    "title": "Guida completa al digital marketing",
+    "author": "Marco Rossi",
+    "date": "2025-01-15",
+    "category": "Marketing",
+    "tags": ["digital marketing", "strategies", "online"]
+  },
+  {
+    "title": "Strategie di risparmio per il 2025",
+    "author": "Giulia Neri",
+    "date": "2025-03-01",
+    "category": "Finance",
+    "tags": ["saving", "budget", "personal finance"]
+  },
+  {
+    "title": "Tendenze tecnologiche da tenere d'occhio",
+    "author": "Davide Moretti",
+    "date": "2025-04-05",
+    "category": "Innovation",
+    "tags": ["technology", "trends", "future"]
+  }
 ]
