@@ -41,8 +41,17 @@ export default function App() {
     alert(`Titolo modificato!`);
   };
 
-  const deleteEntry = () => {
+  const deleteEntry = (event) => {
+    const elementIndex = Number(event.currentTarget.id.replace('delete-title-', ''));
 
+    const confirmed = window.confirm(`Sei sicuro di voler eliminare il titolo: ${titles[elementIndex]}?`);
+
+    if (!confirmed) return alert('Eliminazione annullata.')
+
+    titles.splice(elementIndex, 1);
+
+    setTitles([...titles]);
+    alert(`Titolo eliminato!`);
   };
 
   return (
