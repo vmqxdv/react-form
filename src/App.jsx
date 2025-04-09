@@ -9,6 +9,18 @@ export default function App() {
   const [titles, setTitles] = useState(initialTitles);
   const [title, setTitle] = useState('');
 
+  const renderTable = (titles) => {
+    return titles.map((title, i) => 
+      <tr key={i}>
+        <td>{title}</td>
+        <td>
+          <button id={'edit-title-'+i} onClick={editEntry}><i className="fa-solid fa-pen-to-square"></i></button>
+          <button id={'delete-title-'+i} onClick={deleteEntry}><i className="fa-solid fa-trash-can"></i></button>
+        </td>
+      </tr>
+    )
+  }
+
   const userFeedBack = (event) => {
     event.preventDefault();
     
@@ -19,8 +31,14 @@ export default function App() {
     setTitle('');
   };
 
-  const editEntry = () => {
-    
+  const editEntry = (event) => {
+    const elementIndex = Number(event.currentTarget.id.replace('edit-title-', ''));
+
+    const newTitle = prompt(`Stai modificando: ${titles[elementIndex]}\n\nScrivi il nuovo titolo:`)
+
+    titles[elementIndex] = newTitle;
+    setTitles([...titles]);
+    alert(`Titolo modificato!`);
   };
 
   const deleteEntry = () => {
@@ -37,15 +55,7 @@ export default function App() {
           </tr>
         </thead>
         <tbody>
-          {titles.map((title, i) => 
-            <tr key={i}>
-              <td>{title}</td>
-              <td>
-                <button onClick={editEntry}><i className="fa-solid fa-pen-to-square"></i></button>
-                <button onClick={deleteEntry}><i className="fa-solid fa-trash-can"></i></button>
-              </td>
-            </tr>
-          )}
+          {renderTable(titles)}
         </tbody>
       </table>
 
